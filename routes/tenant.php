@@ -26,4 +26,24 @@ Route::middleware([
     Route::get('/', function () {
         return view('Tenant.index');
     });
+
+    Route::get('/login', function () {
+        return view('Tenant.signin');
+    })->name('login');
+
+    Route::get('/aboutUs', function () {
+        return view('Tenant.about');
+    })->name('aboutUs');
+
+    Route::get('/Contact', function () {
+        return view('Tenant.contact');
+    })->name('contact_page');
+
+    Route::get('/TourList', function () {
+        return view('Tenant.tours');
+    })->name('tourListPage');
+
+    Route::get('/tourBooking', function () {
+        return view('Tenant.tour-booking');
+    })->name('tourBooking');
 });

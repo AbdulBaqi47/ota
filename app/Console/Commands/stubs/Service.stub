@@ -1,0 +1,10 @@
+<?php
+
+namespace App\Services;
+
+use App\Services\Contracts\{{contract}};
+
+class {{class}} implements {{contract}}
+{
+    // Repository implementation...
+}

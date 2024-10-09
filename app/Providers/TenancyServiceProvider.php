@@ -94,7 +94,18 @@ class TenancyServiceProvider extends ServiceProvider
 
     public function register()
     {
-        //
+        // Bind the repositories' contracts with their implementations
+
+        $this->app->bind('App\Repositories\Contracts\CityRepositoryContract', 'App\Repositories\CityRepository');
+
+
+
+
+        // Bind the service's contracts with their implementations
+
+        $this->app->bind('App\Services\Contracts\CityServiceContract', 'App\Services\CityService');
+
+
     }
 
     public function boot()
