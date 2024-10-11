@@ -56,7 +56,7 @@
                                 <tr role="row" class="odd">
                                     <th scope="row" tabindex="0" class="sorting_1"> <a href="#"
                                             class="question_content"> {{ $tenant->id }}</a></th>
-                                    <td><a target="_blank" href="http://{{ $tenant->domains->first()->domain }}">{{ $tenant->domains->first()->domain }}</a>
+                                    <td><a target="_blank" href="http://{{ $tenant?->domains?->first()->domain }}">{{ $tenant?->domains?->first()->domain }}</a>
 
                                     </td>
                                     <td>{{ $tenant->contact }}</td>

@@ -42,16 +42,23 @@ class AdminController extends Controller
             'status' => $request->tenant_status ? '1' : '0'
 
         ]);
+        // dd($tenant->tenancy_db_name);
 
         $tenant->domains()->create(['domain' => $domainName]);
 
         // Create the tenant user
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->tenant_email,
-            'password' => Hash::make($request->tenant_password),
-            // 'tenant_id' => $tenant->id, // Associate user with tenant
-        ]);
+        tenancy()->initialize($tenant);
+
+        $user = new User;
+        // $user->setConnection($tenant->tenancy_db_name);
+        $user->name =  $request->name;
+        $user->email =  $request->tenant_email;
+        $user->role =  'su_admin';
+        $user->password = Hash::make($request->tenant_password);
+        $user->save();
+
+        tenancy()->end();
+        
         return redirect()->route('centralDasboard')->with('success', 'Tenant and user created successfully!');
     }
     public function showTenants(){
