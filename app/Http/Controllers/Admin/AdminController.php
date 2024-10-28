@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 
 use App\Http\Controllers\Controller;
-use App\Models\Tenant;
-use App\Models\User;
+use App\Models\Central\Tenant;
+use App\Models\Central\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -13,11 +13,15 @@ class AdminController extends Controller
 {
     public function centralDasboard()
     {
-        return view('Dashboard.index');
+        return view('Central.Dashboard.index');
+    }
+    public function TenantDashboard()
+    {
+        return view('Tenant.Admin.Dashboard.index');
     }
     public function createTenant()
     {
-        return view('Dashboard.tenant.create');
+        return view('Central.Dashboard.tenant.create');
     }
     public function storeTenant(Request $request)
     {
@@ -58,12 +62,11 @@ class AdminController extends Controller
         $user->save();
 
         tenancy()->end();
-        
+
         return redirect()->route('centralDasboard')->with('success', 'Tenant and user created successfully!');
     }
     public function showTenants(){
         $tenants = Tenant::with('domains')->get();
-        // dd($tenants);
-        return view('Dashboard.tenant.view')->with('tenants', $tenants);
+        return view('Central.Dashboard.tenant.view')->with('tenants', $tenants);
     }
 }
