@@ -35,10 +35,20 @@ return [
     |
     */
 
+
     'guards' => [
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
+        ],
+        'tenant_auth' => [
+            'driver' => 'session',
+            'provider' => 'tenant_users',
+        ],
+        'api' => [
+            'driver' => 'token',
+            'provider' => 'users',
+            'hash' => false,
         ],
     ],
 
@@ -60,9 +70,13 @@ return [
     */
 
     'providers' => [
-        'users' => [
+       'users' => [
             'driver' => 'eloquent',
-            'model' => env('AUTH_MODEL', App\Models\User::class),
+            'model' => App\Models\Central\User::class,
+        ],
+        'tenant_users' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Tenant\User::class,
         ],
 
         // 'users' => [
