@@ -27,8 +27,7 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
-
-        if(isset(tenancy()->tenant)) return route('tenant.admin.login');
+        if(isset(tenancy()->tenant)) return route('tenant.auth.login');
         else return redirect()->intended(route('TenantDashboard'));
 
         return redirect()->intended(route('TenantDashboard', absolute: false));

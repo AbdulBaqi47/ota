@@ -5,10 +5,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>{{ tenant('id') }} - Travel Agency & Tour Booking HTML Template - Home One</title>
+    <title>Buraq Allience | Travel Agency & Tour Booking</title>
     <meta name="author" content="vecuro">
-    <meta name="description" content="{{ tenant('id') }} -  Travel Agency & Tour Booking HTML Template">
-    <meta name="keywords" content="{{ tenant('id') }} -  Travel Agency & Tour Booking HTML Template">
+    <meta name="description" content="Buraq Allience | Travel Agency & Tour Booking HTML Template">
+    <meta name="keywords" content="Buraq Allience | Travel Agency & Tour Booking HTML Template">
     <meta name="robots" content="INDEX,FOLLOW">
 
     <!-- Mobile Specific Metas -->
@@ -56,12 +56,12 @@
         <div class="vs-menu-area text-center">
             <button class="vs-menu-toggle"><i class="fal fa-times"></i></button>
             <div class="mobile-logo">
-                <a href="index.html">{{ tenant('id') }}</a>
+                <a href="#"> Buraq Allience </a>
             </div>
             <div class="vs-mobile-menu">
                 <ul>
                     <li>
-                        <a href="index.html">aaaa {{ tenant('id') }}</a>
+                        <a href="#"> Buraq Allience </a>
                     </li>
                     <li class="menu-item-has-children">
                         <a href="#">Destinations</a>

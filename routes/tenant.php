@@ -37,7 +37,7 @@ Route::middleware([
     PreventAccessFromCentralDomains::class,
 ])->group(function () {
     Route::get('/', function () {
-        return view('Tenant.Admin.Dashboard.index');
+        return view('Tenant.index');
     });
     Route::middleware('guest')->group(function () {
         Route::get('register', [RegisteredUserController::class, 'create'])
@@ -46,7 +46,7 @@ Route::middleware([
         Route::post('register', [RegisteredUserController::class, 'store']);
 
         Route::get('login', [AuthenticatedSessionController::class, 'create'])
-            ->name('tenant.admin.login');
+            ->name('tenant.auth.login');
 
         Route::post('login', [AuthenticatedSessionController::class, 'store']);
 
