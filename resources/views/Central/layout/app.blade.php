@@ -186,8 +186,15 @@
                                     </div>
                                     <div class="profile_info_details">
                                         <a href="#">My Profile </a>
-                                        <a href="#">Settings</a>
-                                        <a href="#">Log Out </a>
+                                        <a href="#">Settings</a><form method="POST" action="{{ route('logout') }}">
+                            @csrf
+
+                            <x-dropdown-link :href="route('logout')"
+                                    onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                {{ __('Log Out') }}
+                            </x-dropdown-link>
+                        </form>
                                     </div>
                                 </div>
                             </div>
