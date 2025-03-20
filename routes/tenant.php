@@ -7,7 +7,8 @@ use Illuminate\Support\Facades\Route;
 use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Tenant\Admin\AdminController;
+use App\Http\Controllers\Tenant\Admin\NewsAlertController;
 
 use App\Http\Controllers\Tenant\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Tenant\Auth\ConfirmablePasswordController;
@@ -70,6 +71,13 @@ Route::middleware([
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
         Route::get('/dashboard', [AdminController::class,"TenantDashboard"])->name('TenantDashboard');
+
+        Route::group(['prefix' => 'news'], function () {
+            Route::get('/view', [NewsAlertController::class,"view"])->name('viewNewsAlerts');
+            Route::get('/create', [NewsAlertController::class,"create"])->name('createNewsAlerts');
+            Route::post('/store', [NewsAlertController::class,"store"])->name('storeNewsAlert');
+
+        });
 
         Route::get('verify-email', EmailVerificationPromptController::class)
         ->name('verification.notice');

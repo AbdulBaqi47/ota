@@ -3439,7 +3439,9 @@ table.dataTable {
 }
 
 .sidebar #sidebar_menu>li {
-    margin-left: 30px
+    margin-left: 30px;
+    margin-right: 10px
+
 }
 
 .sidebar #sidebar_menu>li.side_menu_title span {

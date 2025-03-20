@@ -24,7 +24,8 @@
 
     <link rel="stylesheet" href="{{ asset('Admin/vendors/gijgo/gijgo.min.css ') }}" />
 
-    <link rel="stylesheet" href="{{ asset('Admin/vendors/font_awesome/css/all.min.css ') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+
     <link rel="stylesheet" href="{{ asset('Admin/vendors/tagsinput/tagsinput.css ') }}" />
 
     <link rel="stylesheet" href="{{ asset('Admin/vendors/datepicker/date-picker.css ') }}" />
@@ -365,6 +366,8 @@
     <script src="{{ asset('Admin/vendors/owl_carousel/js/owl.carousel.min.js ') }}"></script>
 
     <script src="{{ asset('Admin/vendors/gijgo/gijgo.min.js ') }}"></script>
+
+    <script src="https://kit.fontawesome.com/b97777b688.js" crossorigin="anonymous"></script>
 
     <script src="{{ asset('Admin/vendors/datatable/js/jquery.dataTables.min.js ') }}"></script>
     <script src="{{ asset('Admin/vendors/datatable/js/dataTables.responsive.min.js ') }}"></script>
