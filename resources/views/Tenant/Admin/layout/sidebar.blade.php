@@ -116,16 +116,17 @@
                 <li><a href="chart_box_1.html">Chart Boxes 1</a></li>
                 <li><a href="profilebox.html">Profile Box</a></li>
             </ul>
-        </li>
+        </li>--}}
         <li class>
-            <a class="has-arrow" href="#" aria-expanded="false">
-                <img src = "{{ asset('Admin/img/menu-icon/map.svg ') }}" alt>
-                <span>Maps</span>
+            <a class="" href="{{route('viewNewsAlerts')}}" aria-expanded="false">
+                {{-- <img src = "{{ asset('Admin/img/menu-icon/map.svg ') }}" alt> --}}
+                <i class="fa-regular fa-bell"></i>
+                <span>News & Alerts</span>
             </a>
-            <ul>
+            {{-- <ul>
                 <li><a href="mapjs.html">Maps JS</a></li>
                 <li><a href="vector_map.html">Vector Maps</a></li>
-            </ul>
-        </li> --}}
+            </ul> --}}
+        </li>
     </ul>
 </nav>

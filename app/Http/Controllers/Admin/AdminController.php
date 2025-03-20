@@ -15,10 +15,6 @@ class AdminController extends Controller
     {
         return view('Central.Dashboard.index');
     }
-    public function TenantDashboard()
-    {
-        return view('Tenant.Admin.Dashboard.index');
-    }
     public function createTenant()
     {
         return view('Central.Dashboard.tenant.create');
