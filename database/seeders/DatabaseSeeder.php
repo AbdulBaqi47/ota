@@ -51,5 +51,23 @@ class DatabaseSeeder extends Seeder
         $user->role =  'su_admin';
         $user->password = Hash::make('Buraq!23');
         $user->save();
+
+
+        $this->call(
+            [
+                // PermissionSeeder::class,
+                // RoleSeeder::class,
+                // PermissionSeeder::class,
+                // TransactionTypesSeeder::class,
+                // TransactionsSeeder::class,
+                // UserSeeder::class,
+                // COASeeder::class,
+                CountriesSeeder::class,
+                CitiesSeeder::class,
+                // BankSeeder::class,
+                AirportsSeeder::class,
+                AirlinesSeeder::class
+            ]
+        );
     }
 }
