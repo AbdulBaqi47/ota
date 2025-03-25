@@ -64,7 +64,7 @@ class DatabaseSeeder extends Seeder
                 // COASeeder::class,
                 CountriesSeeder::class,
                 CitiesSeeder::class,
-                // BankSeeder::class,
+                BankSeeder::class,
                 AirportsSeeder::class,
                 AirlinesSeeder::class
             ]
