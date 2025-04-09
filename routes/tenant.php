@@ -9,6 +9,7 @@ use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Tenant\Admin\AdminController;
 use App\Http\Controllers\Tenant\Admin\NewsAlertController;
+use App\Http\Controllers\Tenant\Admin\GeneralSettingController;
 
 use App\Http\Controllers\Tenant\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Tenant\Auth\ConfirmablePasswordController;
@@ -76,6 +77,13 @@ Route::middleware([
             Route::get('/view', [NewsAlertController::class,"view"])->name('viewNewsAlerts');
             Route::get('/create', [NewsAlertController::class,"create"])->name('createNewsAlerts');
             Route::post('/store', [NewsAlertController::class,"store"])->name('storeNewsAlert');
+
+        });
+        Route::group(['prefix' => 'settings'], function () {
+            Route::group(['prefix' => 'general'], function () {
+                Route::get('/view', [GeneralSettingController::class,"index"])->name('viewGeneralSettings');
+                Route::post('/store', [GeneralSettingController::class,"store"])->name('updateGeneralSettings');
+            });
 
         });
 
