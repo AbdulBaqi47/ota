@@ -13,7 +13,7 @@
             </a>
 
         </li>
-        <li class>
+        {{-- <li class>
             <a class="has-arrow" href="#" aria-expanded="false">
                 <img src = "{{ asset('Admin/img/menu-icon/2.svg ') }}" alt>
                <span>Tenants</span>
@@ -22,7 +22,7 @@
                 <li><a  href="#">Tenants list</a></li>
                 <li><a href="#">Create New</a></li>
             </ul>
-        </li>
+        </li> --}}
         {{-- <li class>
             <a class="has-arrow" href="#" aria-expanded="false">
                 <img src = "{{ asset('Admin/img/menu-icon/3.svg ') }}" alt>
@@ -117,6 +117,16 @@
                 <li><a href="profilebox.html">Profile Box</a></li>
             </ul>
         </li>--}}
+        <li class>
+            <a class="has-arrow" href="#" aria-expanded="false">
+                <img src = "{{ asset('Admin/img/menu-icon/10.svg ') }}" alt>
+                <span>Settings</span>
+            </a>
+            <ul>
+                <li><a href="{{route('viewGeneralSettings')}}">General</a></li>
+                {{-- <li><a href="profilebox.html">Payments</a></li> --}}
+            </ul>
+        </li>
         <li class>
             <a class="" href="{{route('viewNewsAlerts')}}" aria-expanded="false">
                 {{-- <img src = "{{ asset('Admin/img/menu-icon/map.svg ') }}" alt> --}}
